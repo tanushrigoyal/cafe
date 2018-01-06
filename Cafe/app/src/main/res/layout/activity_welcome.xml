@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp.cafe.Welcome"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:text="WELCOME"
+            android:textColor="@color/LightOrange"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="398dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="SMART CAFE"
+            android:textAlignment="center"
+            android:textColor="@color/LightOrangedark"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/nav_header_vertical_spacing"
+        android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:id="@+id/Progressbar"
+        android:theme="@style/ProgressTheme"/>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_marginTop="135dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/spaceullustration">
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

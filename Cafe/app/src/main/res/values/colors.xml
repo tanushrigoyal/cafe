@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004d40</color>
+    <color name="colorPrimaryDark">#00251a</color>
+    <color name="colorAccent">#39796b</color>
+    <color name="Signup">#39796b</color>
+    <color name="Signupactive">#a9d440</color>
+    <color name="OverlayBackground">#7f333639</color>
+    <color name="Overlayactionbar">#0e0d0e</color>
+    <color name="Brown">#8b4513</color>
+    <color name="LightOrange">#fdf2df</color>
+    <color name="LightOrangedark">#ebd6ab</color>
+    <color name="Black">#000</color>
+    <color name="ProgressBar">#9C27B0</color>
+    <color name="Login">#3F51B5</color>
+
+</resources>

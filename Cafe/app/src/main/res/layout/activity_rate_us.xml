@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.hp.cafe.Rate_us">
+
+
+<RatingBar
+    android:id="@+id/ratingBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="76dp"
+    tools:layout_editor_absoluteY="30dp"
+    android:numStars="5"
+    android:stepSize="1"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="77dp" />
+
+<Button
+    android:id="@+id/submit_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="SUBMIT"
+    tools:layout_editor_absoluteX="147dp"
+    tools:layout_editor_absoluteY="153dp"
+    android:layout_below="@+id/ratingBar"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="71dp" />
+
+<TextView
+    android:id="@+id/rating_display"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="109dp"
+    android:text="YOUR RATING WILL BE SHOWN HERE"
+    android:layout_below="@+id/submit_button"
+    android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
