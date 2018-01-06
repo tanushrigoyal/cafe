@@ -7,7 +7,7 @@ function signup(req, res, next) {
     let data = JSON.parse(JSON.stringify(req.body));
     console.log(data);
 
-    query.query('SELECT * FROM register WHERE phone = ?  AND pwd =?', [data.phone, data.pwd], function(err, results) {
+    query.query('SELECT * FROM register WHERE phone = ?', [data.phone], function(err, results) {
         console.log(results);
         if (results.length) {
             res.json({
@@ -29,6 +29,7 @@ function signup(req, res, next) {
                 } else {
                     res.json({
                         success: "false",
+                        result: "false",
                         error: "cannot signup"
                     });
 

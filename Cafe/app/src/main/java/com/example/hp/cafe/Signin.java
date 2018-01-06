@@ -29,11 +29,6 @@ public class Signin extends AppCompatActivity {
     String login_url;
     String success , error,test;
 
-    public class Details{
-        String adhar_Id;
-        String seller_Id;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +46,7 @@ public class Signin extends AppCompatActivity {
                 Phone = phone.getText().toString();
                 Pass = pass.getText().toString();
                 login_url = "http://192.168.43.202:8080/login/" + Phone +"/" + Pass;
+
                 JsonObjectRequest JsonObjectRequest = new JsonObjectRequest(Request.Method.GET, login_url, null,
                         new Response.Listener<JSONObject>() {
                             @Override
@@ -62,17 +58,17 @@ public class Signin extends AppCompatActivity {
                                     error = response.getString("error");
                                     test = response.getString("result");
 
-                                    Toast.makeText(getApplicationContext(),success,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Signin.this,success,Toast.LENGTH_SHORT).show();
 
 //                                    Gson gson = new Gson();
 //                                    JsonParser parser = new JsonParser();
 //                                    JsonArray array = parser.parse(test).getAsJsonArray();
 //                                    Details details = gson.fromJson(array.get(0), Details.class);
-
-                                    if(error.equals("hell"))
+                                    Intent intent=new Intent(Signin.this,MainActivity.class);
+//
+                                    if(error.equals("false"))
                                     {
-                                       Intent intent=new Intent(Signin.this,Home.class);
-//                                        intent.putExtra("adhar_Id",details.adhar_Id);
+//                                         intent.putExtra("adhar_Id",details.adhar_Id);
 //                                        intent.putExtra("seller_Id",details.seller_Id);
                                         startActivity(intent);
 //                                        SharedPreferences sharedPreferences = getSharedPreferences("My pref",MODE_PRIVATE);

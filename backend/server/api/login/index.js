@@ -18,6 +18,7 @@ function login (req, res, next){
     else {
         res.json({
             success: "false",
+            result: "false",
             error:"cannot login"
         });
 
