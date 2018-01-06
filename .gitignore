@@ -18,7 +18,7 @@ node_modules
 ####################
 # Config
 ####################
-server/config/local.js
+backend/server/config/local.js
 
 ####################
 # Logs
