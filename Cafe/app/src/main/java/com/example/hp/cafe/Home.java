@@ -30,12 +30,7 @@ import com.squareup.picasso.Picasso;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    FirebaseDatabase database;
-    DatabaseReference category;
-    TextView txtFullName;
-    RecyclerView recycle_menu;
-    RecyclerView.LayoutManager layoutManager;
-    FirebaseRecyclerAdapter<com.example.hp.cafe.Model.category,MenuViewHolder> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +41,6 @@ public class Home extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        //firebase
-        database=FirebaseDatabase.getInstance();
-        category=database.getReference("category");
 
         FloatingActionButton fab =(FloatingActionButton)findViewById(R.id.fab);
         fab.setOnClickListener(
@@ -75,65 +67,19 @@ public class Home extends AppCompatActivity
         //set name for user
 
 
-         View headerView= navigationView.getHeaderView(0);
-        txtFullName=(TextView)headerView.findViewById(R.id.txtFullName);
-         txtFullName.setText(Common.CurrentUser.getName());
+
+
 
 
         //load menu
 
 
 
-        recycle_menu=(RecyclerView)findViewById(R.id.recycler_menu);
-        recycle_menu.setHasFixedSize(true);
-        layoutManager=new LinearLayoutManager(this);
-        recycle_menu.setLayoutManager(layoutManager);
 
-        loadMenu();
+
 
     }
 
-    private void loadMenu() {
-        adapter =  new FirebaseRecyclerAdapter<com.example.hp.cafe.Model.category, MenuViewHolder>(category.class,R.layout.menu_items,MenuViewHolder.class, category) {
-            @Override
-            protected void populateViewHolder(MenuViewHolder viewHolder, category model, int position) {
-                viewHolder.txtMenuName.setText(model.getName());
-                Picasso.with(getBaseContext()).load(model.getImage())
-                        .into(viewHolder.imageView);
-                final category clickitem = model;
-                viewHolder.setItemClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-
-                        //first Categoryid to new activity
-                        Intent foodlist= new Intent(Home.this,Foodlist.class);
-//category id is key
-                        foodlist.putExtra("CategoryId",adapter.getRef(position).getKey());
-                        startActivity(foodlist);
-
-                    }
-                });
-            }
-        };
-        recycle_menu.setAdapter(adapter);
-    }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
