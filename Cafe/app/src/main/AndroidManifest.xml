@@ -26,16 +26,16 @@
         <activity android:name=".Happy" />
         <activity android:name=".Foodlist" />
         <activity android:name=".Welcome">
-
-        </activity>
-        <activity android:name=".Food_Details" />
-        <activity android:name=".Cart">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Food_Details" />
+        <activity android:name=".Cart">
+
+
         </activity>
     </application>
 
