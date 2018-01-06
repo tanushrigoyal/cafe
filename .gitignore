@@ -9,3 +9,27 @@
 /build
 /captures
 .externalNativeBuild
+####################
+# Npm
+####################
+.npm
+node_modules
+
+####################
+# Config
+####################
+server/config/local.js
+
+####################
+# Logs
+####################
+logs
+*.log
+npm-debug.log*
+
+####################
+# Build System
+####################
+build
+public
+.gulp-cache
